@@ -1,0 +1,62 @@
+<!--h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= user.name %></p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <link rel="stylesheet" href="style_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <input type="checkbox" id="check">
+    <!--header area start-->
+    <header>
+      <label for="check">
+        <i class="fas fa-bars" id="sidebar_btn"></i>
+      </label>
+      <div class="left_area">
+        <h3 style="font-family: Calibri 11">Microsoft Teams</h3>
+      </div>
+      <div class="right_area">
+        <a href="/users/logout" class="logout_btn">Logout</a>
+      </div>
+    </header>
+    <!--header area end-->
+    
+    <!--sidebar start-->
+    <div class="sidebar">
+      <div class="profile_info">
+        <img src="https://i.pinimg.com/originals/9d/f9/5d/9df95dd43337435f5713813fb1422b7f.jpg" class="profile_image" alt="Image">
+        <h4><%= user.name %></h4>
+      </div>
+      <a href="#"><i class="far fa-bell"></i><span>Activity</span></a>
+        <a href="/room"><i class="fas fa-video"></i><span>Video Call</span></a>
+        <a href="#"><i class="far fa-comment"></i><span>Chat</span></a>
+        <a href="#"><i class="fas fa-users"></i><span>Teams</span></a>
+        <a href="#"><i class="far fa-calendar-alt"></i><span>Calender</span></a>
+        <a href="#"><i class="fas fa-cog"></i><span>Settings</span></a>
+    </div>
+    <!--sidebar end-->
+
+    <div class="content">
+      <div class="card" style="margin-top:50px" >
+        <img src="https://www.sketchappsources.com/resources/source-image/microsoft-teams-illustration.png" >
+      </div>
+    </div>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $('.nav_btn').click(function(){
+        $('.mobile_nav_items').toggleClass('active');
+      });
+    });
+    </script>
+  </body>
+</html>
+      
