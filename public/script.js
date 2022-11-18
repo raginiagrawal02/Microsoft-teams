@@ -6,7 +6,6 @@ const myVideo = document.createElement('video') // Create a new video tag to sho
 myVideo.muted = true // Mute ourselves on our end so there is no feedback loop
 const peers = {}
 
-
 let myVideoStream;
 // Access the user's video and audio
 navigator.mediaDevices.getUserMedia({
@@ -28,7 +27,7 @@ navigator.mediaDevices.getUserMedia({
         connectToNewUser(userId, stream) 
     })
 })
-
+ 
 socket.on('user-disconnected', userId => {
     if (peers[userId]) peers[userId].close()
 })
@@ -66,8 +65,8 @@ const muteUnmute = () => {
       myVideoStream.getAudioTracks()[0].enabled = false;
       setUnmuteButton();
     } else {
-      setMuteButton();
       myVideoStream.getAudioTracks()[0].enabled = true;
+      setMuteButton();
     }
   }
   
